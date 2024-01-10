@@ -2,6 +2,7 @@ const express = require("express");
 const router = require("./router/auth-router");
 const connectDB = require("./utils/db");
 const ContactRouter = require("./router/contact-router");
+const ServiceRouter = require("./router/service-router");
 const cors = require("cors");
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use("/api/auth", router);
 app.use("/api/form", ContactRouter);
+app.use("/api/data", ServiceRouter);
 
 const PORT = 3000;
 

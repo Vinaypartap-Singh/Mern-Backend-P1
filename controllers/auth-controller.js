@@ -67,4 +67,15 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { home, register, registerUser, loginUser };
+// Get User Data Logic
+
+const user = async (req, res) => {
+  try {
+    const userData = req.user;
+    return res.status(200).json({ userData });
+  } catch (error) {
+    console.log(`Error in user data controller ${error}`);
+  }
+};
+
+module.exports = { home, register, registerUser, loginUser, user };
